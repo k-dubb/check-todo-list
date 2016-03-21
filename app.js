@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+// var Firebase = require("firebase");
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -24,6 +26,37 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+
+// Firebase //
+
+// new Firebase('https://check-todo-list.firebaseio.com/web/data');
+
+// var ref = new Firebase("https://check-todo-list.firebaseio.com");
+// ref.createUser({
+//   email    : "bobtony@firebase.com",
+//   password : "correcthorsebatterystaple"
+// }, function(error, userData) {
+//   if (error) {
+//     console.log("Error creating user:", error);
+//   } else {
+//     console.log("Successfully created user account with uid:", userData.uid);
+//   }
+// });
+
+// var ref = new Firebase("https://check-todo-list.firebaseio.com");
+// ref.authWithPassword({
+//   email    : "bobtony@firebase.com",
+//   password : "correcthorsebatterystaple"
+// }, function(error, authData) {
+//   if (error) {
+//     console.log("Login Failed!", error);
+//   } else {
+//     console.log("Authenticated successfully with payload:", authData);
+//   }
+// });
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -55,6 +88,9 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+
 
 
 module.exports = app;

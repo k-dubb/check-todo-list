@@ -1,0 +1,21 @@
+<!-- Show user's to-do lists once logged in -->
+
+<header class="navbar navbar-static-top navbar-inverse" role="banner">
+    <a ui-sref="home"><span id="logo"><i class="fa fa-check-square-o"></i>Check!</span></a>
+    <a ui-sref="home"><span id="logoutButton">Logout</span></a>
+</header>
+
+<div ng-controller="ChecksController as checkCtrl">
+
+    <div class="ui centered grid container">
+        <div class="row">
+            <h3>My To-Do Lists:</h3>
+        </div>
+        <div class="row">
+            <a ui-sref="create"><button class="ui black basic button" id="black">Create a new to-do list<i class="add circle icon"></i></button></a>
+            <!-- // ng-repeat showing all lists // -->
+            <!-- <a ui-sref="study"><button class="ui violet basic button" id="violet">HTML/CSS</button></a> -->
+        </div>
+    </div>
+
+</div>

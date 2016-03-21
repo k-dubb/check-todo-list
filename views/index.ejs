@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Check">
   <head>
     <title>Check!</title>
     <meta charset="utf-8">
@@ -8,16 +8,19 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/semantic/semantic.min.css">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-
-
-    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <!-- // <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!-- // <script src="/javascripts/firebase.js"></script> -->
     <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/checksController.js"></script>
+  </head>
+  <body>
+
+    <!-- Main Content -->
+    <div ui-view></div>
+
   </body>
 </html>

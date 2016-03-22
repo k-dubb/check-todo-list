@@ -32,7 +32,6 @@
     margin-top: 60px;
 }
 .intro h3{
-    color: #3f3f40;
     font-size: 32px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     font-family: 'Raleway', sans-serif;  
@@ -78,8 +77,17 @@ i.add.circle.icon{
     font-size: 18px;
 }
 .ui.checkbox label{
-    font-size: 18px;
     line-height: 1.5;
+    font-size: 24px;
+}
+.ui.checkbox input[type=checkbox], .ui.checkbox input[type=radio]{
+    opacity: 1 !important;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+}
+.ui.checkbox {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
 }
 .ui.form .field>label{
     font-size: 20px;
@@ -87,8 +95,12 @@ i.add.circle.icon{
 form{
     margin-top: 20px;
 }
+label{
+    padding-top: 20px;
+}
+
 #tableList{
-    margin-top: 40px;  
+    margin-top: 60px;  
 }
 .add{
     margin: 20px;
@@ -97,16 +109,112 @@ form{
 #checkbox{
     margin-top: 36px;
 }
-button#addItem, button#done{
+button.addItem, button#done{
     background-color: white;
     border: none;
     text-align: center; 
     margin: 20px 30px;
     margin-bottom: 0px;
 }
+.leftToDo{
+    font-size: 18px;
+
+}
 h6{
     font-size: 18px;
 }
 .done-true{
     text-decoration: line-through;
+} 
+.navbar{
+    margin: 0px;
+}
+
+
+///////////////////////
+
+
+@import "compass/css3";
+
+body {
+  background: #13756D;
+}
+
+.todo-wrapper {
+  background: #55B6AE;
+  width: 100%;
+}
+
+h2 {
+  /*font-size: 26px;*/
+  /*font-family: 'Raleway', sans-serif;*/
+  background: #1CA89C;
+  padding: 30px;
+  margin: 0;
+  color: #333;
+  text-align: center;
+ }
+.emphasis {
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+/*ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2em;
+  padding: 40px;
+  
+  background: #65d8cb; 
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#65d8cb), to(#72f4e9));
+  background: -webkit-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: -moz-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: -o-linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  background: linear-gradient(#65d8cb 0%, #72f4e9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65d8cb', endColorstr='#72f4e9',GradientType=0 );
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+*/
+/*li input[type="checkbox"] {
+  width: 40px;
+}*/
+.done-true {
+  text-decoration: line-through;
+}
+.add-input {
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;  
+}
+.clear-btn {
+  width: 100%;
+  border: none;
+  height: 100px;
+  background: #13756D;
+  color: #aaa;
+}
+input{
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    margin: 0;
+    outline: 0;
+    -webkit-appearance: none;
+    tap-highlight-color: rgba(255,255,255,0);
+    line-height: 1.2142em;
+    padding: .67861429em 1em;
+    font-size: 1em;
+    background: #fff;
+    border: 1px solid rgba(34,36,38,.15);
+    color: rgba(0,0,0,.87);
+    border-radius: .28571429rem;
+    box-shadow: 0 0 0 0 transparent inset;
+    -webkit-transition: color .1s ease,border-color .1s ease;
+    transition: color .1s ease,border-color .1s ease;
+    width: 100%;
+    vertical-align: top;
 }

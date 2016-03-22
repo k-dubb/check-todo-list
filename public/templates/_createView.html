@@ -7,82 +7,92 @@
 
 <div ng-controller="ChecksController as checkCtrl">
 
+    <h2>You have <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
+
     <div class="ui two column grid container">
         <div class="column">
             <form class="ui form">
                 <div class="field">
-                    <!-- // Create a new array in db with name of to-do list // -->
                     <label for "name">Name of your to-do list:</label>
-                    <input type="text" name="name" placeholder="Name" ng-model="formData.name">
-                </div>
-                <div class="field">
+                    <input type="string" name="name" placeholder="Name" ng-model="formToDoName">
+
                     <label for="item">To Do:</label>
-                    <input type="text" placeholder="Item" name="item" ng-model="formData.item">
-                </div>
-                <div class="field">
-                    <!-- // Create a new array in db with name of to-do list // -->
-                    <label for "category">Category:</label>
-                    <select class="ui fluid dropdown" ng-model="formData.category">
+                    <input class="add-input" placeholder="Item" type="text" ng-model="formTodoText" ng-model-instant />
+
+                    <!-- <label for "category">Category:</label>
+                    <select class="ui fluid dropdown" type="string" ng-model="formToDoCategory">
                         <option value="">Category</option>
                         <option category="Work">Work</option>
                         <option category="Personal">Personal</option>
                         <option category="Other">Other</option>
-                    </select>
-                </div>
-                <div class="field">
-                    <!-- // Create a new array in db with name of to-do list // -->
-                    <label for "category">Color:</label>
-                    <select class="ui fluid dropdown" ng-model="formData.value">
-                        <option value="">Color</option>
-                        <option value="#00C1F2">Blue</option>
-                        <option value="#FFF589">Yellow</option>
-                        <option value="#1BF7B5">Green</option>
-                        <option value="#FF77B6">Pink</option>
-                    </select>
-                </div>
-                <!-- // Push and save to new array // -->
-                <div class="add">     
-                    <button id="addItem" ng-click="addToDo()">
-                        <i class="fa fa-plus-circle fa-2x"></i>
-                        <h6>Add<p>Another</p>Item</h6>
-                    </button>
-                    <!-- // Re-route back to '/user' // -->
-                    <button id="done">
-                        <i class="fa fa-check-circle fa-2x"></i>
-                        <h6>Done</h6>
-                    </button>
+                    </select> -->
+                    <div class="add">     
+                        <button class="addItem" ng-click="addTodo()">
+                            <i class="fa fa-plus-circle fa-2x"></i>
+                            <h6>Add<p>Another</p>Item</h6>
+                        </button>
+                         <button id="done">
+                            <i class="fa fa-check-circle fa-2x"></i>
+                            <h6>Done</h6>
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
-
         <div class="column" id="tableList">
             <table class="ui fixed celled striped table">
                 <thead>
                     <tr>
-                        <th class="twelve wide" id="header" style='background-color: {{formData.value}};'>{{ formData.name }}</th>
-                        <th class="four wide" style='background-color: {{formData.value}};'></th>
+                        <th class="twelve wide" id="header" style='background-color: {{formData.value}};'>{{ formToDoName }}</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="todDo in toDos">
+                    <tr ng-repeat="todo in todos">
                         <td>
                             <form class="ui form">
-                            <div class="inline field">
-                                <div class="ui checkbox">
-                                    <input type="checkbox" tabindex="0" class="hidden" id="checkbox1" ng-model="todo.done">
-                                    <label for="checkbox1" class="done-{{todo.done}}">{{ formData.item }}</label>
+                                <div class="inline field">
+                                    <div class="ui checkbox">
+                                        <input type="checkbox" ng-model="todo.done" />
+                                        <span class="done-{{todo.done}}">{{todo.text}}</span>
+
+                                        <!-- <label for="checkbox1" class="done-{{todo.done}}">{{todo.text}}</label> -->
+                                    </div>
                                 </div>
-                            </div>
                             </form>
                         </td>
-                        <td id="value">
-                            <label>{{ formData.category }}</label>
-                        </td>  
+                        <!-- <td id="value">
+                            <label>{{ formToDoCategory }}</label>
+                        </td>   -->
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+  <!--           <ul>
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done"/>
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+        </div> -->
+
+
+
+
+
+
+
+      <!-- <button class="clear-btn" ng-click="clearCompleted()">Clear completed</button> -->
+
+
+     <!--     <ul>
+            <li ng-repeat="todo in todos">
+              <input type="checkbox" ng-model="todo.done"/>
+              <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+          </ul> -->
+
 
 </div>
 

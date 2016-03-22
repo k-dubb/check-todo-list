@@ -1,32 +1,88 @@
 // Controller for the to-do list form
 (function() {
   
-    var app = angular.module('Check', []);
+    var app = angular.module('Check');
 
     app.controller('ChecksController', function ($scope) {
 
-    // var toDoApp = angular.module('toDoApp', ['ngAnimate']);
+    // var self = this;
 
-    $scope.toDos = [
-      {'item': 'Wash the car',
-       'category': 'one thing',
-      {'item': 'Try out Angular.js on CodePen', 
-      'category' : 'two things'}
-    ];
+    // function checkCtrl($scope) {
+      
+      $scope.todos = [
+        {"id": 0, string: "Kelli's", text:"Learn AngularJS", done:false},         
+        // {text: 'Build an app',  done:false}
+      ];
 
-    $scope.addToDo = function(){
-      var formattedDate = Date.parse($scope.formDueDate);
-      $scope.toDos.push({description:$scope.formToDo, dueBy:formattedDate});
-      $scope.formToDo = '';
-      $scope.formDueDate = '';
-    };
+      // var itemsLeft = $scope.todos.length;
 
-    $scope.removeToDo = function(toDo){
-      var index = $scope.toDos.indexOf(toDo);
-      $scope.toDos.splice(index, 1);     
-    };
+      
+      $scope.getTotalTodos = function () {
+        return $scope.todos.length;
+      };
+
+      
+      $scope.addTodo = function () {
+          $scope.todos.push({string:$scope.formToDoName, text:$scope.formTodoText, done:false});
+
+          $scope.formTodoText = '';
+      };
+      
+      $scope.clearCompleted = function () {
+            $scope.todos = _.filter($scope.todos, function(todo){
+                return !todo.done;
+            });
+      };
+
+      // $scope.itemsDone = function () {
+
+      //     var itemsLeft = $scope.todos.length - 1;
+
+      //     console.log(itemsLeft);
+ 
+      // };
 
     });
+})();
+
+
+
+
+    // app.controller('ChecksController', function ($scope) {
+
+    // $scope.toDos = [
+    //   {'name': 'testName', 
+    //   'item': 'Wash the car',
+    //    'category': 'one thing'},
+    //   {'name': 'TestName2',
+    //   'item': 'Try out Angular.js on CodePen', 
+    //   'category': 'two things'}
+    // ];
+
+    // function addToDo(toDo){
+
+    //   $scope.toDos.push({ name:$scope.formToDoName, item:formToDoItem, category: formToDoCategory });
+
+    //   $scope.formToDoName = '';
+    //   $scope.formToDoItem = '';
+    //   $scope.formToDoCategory = '';
+
+    // };
+
+    // $scope.addToDo = addToDo;
+
+    // $scope.removeToDo = function(toDo){
+    //   var index = $scope.toDos.indexOf(toDo);
+    //   $scope.toDos.splice(index, 1);     
+    // };
+
+    // });
+
+
+
+
+
+
 
 
 
@@ -98,7 +154,7 @@
 
     //     }, function errorCallback(response) {
 
-    });
+    // });
 
 
-})();
+// })();

@@ -1,0 +1,49 @@
+<!-- Show user's to-do list they selected -->
+
+<header class="navbar navbar-static-top navbar-inverse" role="banner">
+    <a ui-sref="home"><span id="logo"><i class="fa fa-check-square-o"></i>Check!</span></a>
+    <a ui-sref="home"><span id="logoutButton">Logout</span></a>
+</header>
+
+<div ng-controller="ChecksController as checkCtrl">
+
+<!-- <h2>You have <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2> -->
+
+
+  <!-- <div class="ui stackable fluid grid container" > -->
+<div class="eight wide column" id="listView">
+    <table class="ui fixed celled striped table">
+        <thead>
+            <!-- <tr ng-repeat="todo in todos | filter:{todo:currentList.name}" > -->
+            <tr ng-class="currentList.name" >
+
+            <!-- <tr ng-repeat="test in todos.tests"> -->
+
+             <!-- <track by $index" ng-init="todoIndex = $index"> -->
+                <th class="twelve wide" id="header2" style='background-color: {{formData.value}};'>{{ currentList.name }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr ng-repeat="itemName in tests.itemNames"> -->
+            <!-- <tr ng-repeat="todo in todos" ng-class="isCurrentList(todo)"> -->
+                <td>
+                    <form class="ui form">
+                        <div class="inline field" >
+                            <div class="ui checkbox">
+                                <input type="checkbox" ng-model="todo.done" />
+                                <span class="done-{{todo.done}}">{{ todo.items }}</span>
+                                <!-- <label for="checkbox1" class="done-{{todo.done}}">{{todo.items}}</label> -->
+                            </div>
+                        </div>
+                    </form>
+                </td>
+                <!-- <td id="value">
+                    <label>{{ formToDoCategory }}</label>
+                </td>   -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- </div> -->
+
+</div>

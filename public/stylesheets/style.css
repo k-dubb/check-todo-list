@@ -2,6 +2,10 @@
     margin: 0px;
     padding: 0px;
 }*/
+.row{
+    padding: 0px;
+    margin: 0px;
+}
 #logo{
     margin-left: 30px;
     color: white;
@@ -91,14 +95,16 @@ i.add.circle.icon{
 }
 .ui.form .field>label{
     font-size: 20px;
+    margin-top: 20px;
+}
+#inputCol{
+  margin-top: 30px;
+  padding: 0;
+  padding-left: 20px;
 }
 form{
     margin-top: 20px;
 }
-label{
-    padding-top: 20px;
-}
-
 #tableList{
     margin-top: 60px;  
 }
@@ -125,12 +131,54 @@ h6{
 }
 .done-true{
     text-decoration: line-through;
+    color: red !important;
 } 
 .navbar{
     margin: 0px;
 }
+ul{
+    text-align: center;
+    padding: 0;
+    font-size: 24px;
+    width: 100%;
+    list-style-type: none;
+}
+li{
+    display: block;
+    margin-bottom: 10px;
+}
+h3{
+    font-size: 32px;
+}
+#listOfToDos{
+    margin-top: 30px;
+}
+#listView{
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+    margin-top: 30px; 
+}
+#header2{
+    text-align: center;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    font-size: 28px;
+}
+#nameOfItems{
+  font-size: 20px;
+  text-align: left;
+}
+li{
+    margin-top: 10px;
 
-
+}
+a#list2{
+    color: black;
+}
+a#list2:hover{
+    color: #55B6AE;
+}
 ///////////////////////
 
 

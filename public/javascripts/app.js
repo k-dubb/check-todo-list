@@ -10,10 +10,15 @@
         url: '/',
         templateUrl: '/templates/_homeView.html'
       })
-      // show user's to-do lists
+      // show a user's names of to-do lists
       .state('user', {
         url: '/user',
         templateUrl: '/templates/_userView.html'
+      })
+      // show one to-do list
+      .state('list', {
+        url: '/user/list',
+        templateUrl: '/templates/_listView.html'
       })
       // build your own to-do list
       .state('create', {

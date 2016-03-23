@@ -8,8 +8,24 @@
 <div ng-controller="ChecksController as checkCtrl">
 
     <div class="ui centered grid container">
-        <div class="row">
+        <div class="row" id="listOfToDos">
             <h3>My To-Do Lists:</h3>
+        </div>
+        <div class="row">
+            <ul >
+                <li>
+                    {{todoName}}
+                </li>
+            </ul>
+                <!-- <li ng-repeat="todo in todos"><a ui-sref="list" id="list2" ng-click="setCurrentList(todo)"> -->
+
+                                    <!-- <input type="text" name="name" placeholder="Name" ng-model="todoName"> -->
+
+
+                <!-- <li ng-repeat="todo in todos"><a ui-sref="list" id="list2" ng-click="setCurrentList(todo)"> -->
+                    <!-- {{ todo.name }} -->
+                <!-- <a/></li> -->
+            <!-- </ul> -->
         </div>
         <div class="row">
             <a ui-sref="create"><button class="ui black basic button" id="black">Create a new to-do list<i class="add circle icon"></i></button></a>

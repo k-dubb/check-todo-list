@@ -5,34 +5,126 @@
 
     app.controller('ChecksController', function ($scope) {
 
+        // $scope.user   = $routeParams.orderId;
+
+
     // var self = this;
 
     // function checkCtrl($scope) {
+
+      // $scope.items = [];
+
+      $scope.filters = {};
+
+      $scope.todos = [];
+
+
+      // var todos = [
+      //   {
+      //     "name": "Kelli's", 
+      //     "items": [
+      //       { itemName: "Test" },
+      //       { itemName: "Test2" }
+      //     ]
+      //   }
+      //   ]; 
+        //   {
+        //   "id": 1, 
+        //   "name": "Pete's", 
+        //   "items": "Test2"
+        // }
+        
+
+      // $scope.todos = todos;
+
+      // $scope.todos = [
+      //   {
+      //     "id": 0, 
+      //     "name": "Kelli's", 
+      //     "items": 
+      //     [
+      //         {
+      //           "itemName": ["Learn AngularJS", "Learn React"]
+                // done:false
+              // }
+              // {
+                // "itemName": "Learn React"
+                // done:true
+              // }
+      //     ]
+      //   }
+      // ];
+               // {
+        //   "id": 1, 
+        //   "name": "Pete's", 
+        //   "item": 
+        //   [
+        //         "Learn Something else", 
+        //         "Learn A 4th thing"
+        //   ]
+        // }
       
-      $scope.todos = [
-        {"id": 0, string: "Kelli's", text:"Learn AngularJS", done:false},         
-        // {text: 'Build an app',  done:false}
-      ];
 
       // var itemsLeft = $scope.todos.length;
 
       
-      $scope.getTotalTodos = function () {
-        return $scope.todos.length;
-      };
+      // $scope.getTotalTodos = function () {
 
-      
+      //   $scope.todos = _.filter($scope.todos, function(todo){
+      //           return !todo.done;
+      //       });
+
+      //     var leftToDo = !todo.done;
+      //     var lengthOfArray = $scope.todos.length;
+      //     var totalTodos = lengthOfArray - leftToDo;
+
+      //     return totalTodos;
+      // };
+
+      // $scope.getTotalTodos = getTotalTodos;
+
       $scope.addTodo = function () {
-          $scope.todos.push({string:$scope.formToDoName, text:$scope.formTodoText, done:false});
+          // $scope.todos.push({text:$scope.todo.name, text:$scope.todo.item, done:false});
 
-          $scope.formTodoText = '';
+          $scope.todos.push({ 
+            name: $scope.todoName,
+            item: $scope.todoItemName
+            // color: $scope.todoColor
+            // items: [ { item: $scope.todoItemName }]
+           });
+
+          // $scope.todoName = "";
+          $scope.todoItemName = "";
+
+          console.log('adding an item!');
+
+          // $scope.formTodoText = '';
       };
+
+
+
+      // $scope.showLists = function() {
+      //       return $scope.todoName;
+            // console.log(todoName);
+
+         // $location.path(user);
+
+      // }
       
+      // $scope.showLists = showLists;
+
       $scope.clearCompleted = function () {
             $scope.todos = _.filter($scope.todos, function(todo){
                 return !todo.done;
             });
       };
+
+
+      // Show newly create list on user's page //
+      // $scope.showCreatedLists = function () {
+      //     return $scope.todo.name;
+
+      // };
 
       // $scope.itemsDone = function () {
 
@@ -41,6 +133,21 @@
       //     console.log(itemsLeft);
  
       // };
+
+
+      $scope.currentList = null;
+
+        function setCurrentList(todo){
+            $scope.currentList = todo;
+        }
+
+        function isCurrentList(todo){
+            return $scope.currentList !== null && todo.name === $scope.currentList.name;
+        }
+
+        $scope.setCurrentList = setCurrentList;
+        $scope.isCurrentList = isCurrentList;
+
 
     });
 })();
